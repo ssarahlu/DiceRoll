@@ -76,34 +76,31 @@ public class MainActivity extends AppCompatActivity {
                                         thread.start();
                                     }
 
-                                });      number2 = diceRoll();
-                                        showResult();
-                                    }
-                                });
-                                break;
-                            }
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                                });      
                     }
-                };
-                thread.start();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-
-        });
-
+        };
+        thread.start();
     }
 
+});
 
-    public void ShowGif(View view) {
+        }
+
+
+
+public void ShowGif(View view) {
         ImageView imageView = findViewById(R.id.imageView);
         ImageView imageView2 = findViewById(R.id.imageView2);
         Glide.with(this).load(R.drawable.dicerolling).into(imageView);
         Glide.with(this).load(R.drawable.dicerolling).into(imageView2);
 
-    }
+        }
 
-    public void showResult() {
+public void showResult() {
         String message1 = String.valueOf(number1);
         String message2 = String.valueOf(number2);
         String message3 = String.valueOf(number1 + number2);
@@ -114,35 +111,35 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(message1);
         textView2.setText(message2);
         textView3.setText(message3);
-    }
-
-    private void getImage(int result, ImageView img) {
-
-        if (result == 1) {
-            img.setImageResource(R.drawable.dice_1);
-        } else if (result == 2) {
-            img.setImageResource(R.drawable.dice_2);
-        } else if (result == 3) {
-            img.setImageResource(R.drawable.dice_3);
-        } else if (result == 4) {
-            img.setImageResource(R.drawable.dice_4);
-        } else if (result == 5) {
-            img.setImageResource(R.drawable.dice_5);
-        } else if (result == 6) {
-            img.setImageResource(R.drawable.dice_6);
         }
 
-    }
+private void getImage(int result, ImageView img) {
 
-    public static int diceRoll() {
+        if (result == 1) {
+        img.setImageResource(R.drawable.dice_1);
+        } else if (result == 2) {
+        img.setImageResource(R.drawable.dice_2);
+        } else if (result == 3) {
+        img.setImageResource(R.drawable.dice_3);
+        } else if (result == 4) {
+        img.setImageResource(R.drawable.dice_4);
+        } else if (result == 5) {
+        img.setImageResource(R.drawable.dice_5);
+        } else if (result == 6) {
+        img.setImageResource(R.drawable.dice_6);
+        }
+
+        }
+
+public static int diceRoll() {
         return (int) (Math.random() * 6) + 1;
-    }
+        }
 
 
-    public void open10(View view) {
+public void open10(View view) {
         Intent intent = new Intent(this, RollTen.class);
         startActivity(intent);
 
-    }
+        }
 
-}
+        }
